@@ -95,9 +95,9 @@ Edit `js/script.js`:
 
 ## 📞 Contact
 
-- **Email**: sirapob@email.com
-- **GitHub**: [github.com/yourusername](https://github.com)
-- **X (Twitter)**: [@yourhandle](https://x.com)
+- **Email**: sirapob.1109@gmail.com
+- **GitHub**: [github.com/MrSirapob](https://github.com)
+- **X (Twitter)**: [@MrG3nz](https://x.com)
 
 ## 📄 License
 
