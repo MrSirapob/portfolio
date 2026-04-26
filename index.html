@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sirapob Raksabun — Front-End Developer</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <canvas id="glow"></canvas>
+  <div class="container">
+
+    <!-- LEFT -->
+    <aside class="left">
+      <div>
+        <div class="name">Sirapob<br>Raksabun</div>
+        <div class="role">Front-End Developer</div>
+        <div class="tagline">สร้าง UI ที่ใช้งานง่าย ดีไซน์ดี<br>และ code สะอาด</div>
+        <ul class="nav">
+          <li><a href="#about" class="nl active"><span class="nav-line"></span>About</a></li>
+          <li><a href="#experience" class="nl"><span class="nav-line"></span>Experience</a></li>
+          <li><a href="#projects" class="nl"><span class="nav-line"></span>Projects</a></li>
+        </ul>
+      </div>
+      <div class="socials">
+        <a href="https://github.com/" target="_blank" title="GitHub">
+          <svg viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.303 3.438 9.8 8.205 11.387.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222 0 1.606-.015 2.898-.015 3.293 0 .319.216.694.825.576C20.565 21.795 24 17.298 24 12c0-6.63-5.37-12-12-12z"/></svg>
+        </a>
+        <a href="https://x.com/" target="_blank" title="X">
+          <svg viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.747l7.73-8.835L1.254 2.25H8.08l4.259 5.63L18.244 2.25zm-1.161 17.52h1.833L7.084 4.126H5.117L17.083 19.77z"/></svg>
+        </a>
+        <a href="mailto:sirapob@email.com" title="Email">
+          <svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+        </a>
+      </div>
+    </aside>
+
+    <!-- RIGHT -->
+    <main class="right">
+
+      <section id="about" class="section">
+        <div class="section-label">About</div>
+        <div class="about-text">
+          <p>ผมเป็น <strong>Front-End Developer</strong> ที่ชอบสร้างอินเทอร์เฟซที่ทั้งดูดีและใช้งานได้จริง จบการศึกษาจาก <span class="hl">มหาวิทยาลัยพะเยา</span> สาขา Computer Engineering และกำลังขยายทักษะสู่การเป็น Full-Stack Developer</p>
+          <p>มีประสบการณ์ฝึกงานในตำแหน่ง Fullstack Developer ที่ <span class="hl">บริษัท ไฮเฟน พลัส จำกัด</span> เป็นเวลา 4 เดือน ได้ทำงานกับทีมจริงและพัฒนาระบบ End-to-end ตั้งแต่ UI ไปจนถึง Backend</p>
+          <p>ตอนนี้อยู่ที่ <strong>Phichit</strong> และพร้อมสำหรับการ Interview — ชอบ clean code, ออกแบบ UI ที่มีความหมาย และเรียนรู้เทคโนโลยีใหม่ ๆ อยู่เสมอ</p>
+          <div class="info-pills">
+            <span class="pill pill-green"><span class="pdot"></span>พร้อม Interview</span>
+            <span class="pill pill-cyan">อายุ <span id="age-text">—</span> ปี</span>
+            <span class="pill pill-cyan">Phichit, TH</span>
+          </div>
+        </div>
+        <div class="marquee-wrap">
+          <div class="marquee-track" id="mtrack"></div>
+        </div>
+      </section>
+
+      <section id="experience" class="section">
+        <div class="section-label">Experience</div>
+        <div class="row">
+          <div class="row-date">2024 —<br>4 เดือน</div>
+          <div>
+            <div class="row-company">บริษัท ไฮเฟน พลัส จำกัด</div>
+            <div class="row-pos">Fullstack Developer Intern</div>
+            <div class="row-desc">ฝึกงานในตำแหน่ง Fullstack Developer พัฒนาทั้ง Frontend Interface และ Backend API ทำงานร่วมกับทีม Developer จริง เรียนรู้ workflow การพัฒนาซอฟต์แวร์ในสภาพแวดล้อม Professional</div>
+            <div class="tags"><span class="tag">HTML/CSS</span><span class="tag">JavaScript</span><span class="tag">PHP</span><span class="tag">Fullstack</span></div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="row-date">2020 —<br>2024</div>
+          <div>
+            <div class="row-company">มหาวิทยาลัยพะเยา</div>
+            <div class="row-pos">Computer Engineering — ปริญญาตรี</div>
+            <div class="row-desc">เรียนด้าน Computer Engineering ครอบคลุมทั้ง Software Development, System Design และ Embedded Systems ได้พัฒนา Project จริงหลายชิ้น รวมถึงโปรเจค IoT และ Web Application</div>
+          </div>
+        </div>
+      </section>
+
+      <section id="projects" class="section">
+        <div class="section-label">Projects</div>
+        <div class="row clickable" onclick="openModal()">
+          <div class="proj-thumb">🧊</div>
+          <div>
+            <div class="row-company">ตู้เย็นอัจฉริยะ <span class="arrow">↗</span></div>
+            <div class="row-desc">ระบบ Smart Refrigerator ที่ตรวจสอบและจัดการสินค้าในตู้เย็นอัตโนมัติผ่าน Web Interface แจ้งเตือนวันหมดอายุและของที่ใกล้หมด</div>
+            <div class="tags"><span class="tag">HTML/CSS</span><span class="tag">JavaScript</span><span class="tag">PHP</span><span class="tag">IoT</span><span class="tag">Database</span></div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="proj-thumb">💻</div>
+          <div>
+            <div class="row-company">Personal Website</div>
+            <div class="row-desc">ออกแบบและพัฒนาเว็บไซต์ส่วนตัวตั้งแต่ต้น ทั้ง UI Design และ Frontend Implementation</div>
+            <div class="tags"><span class="tag">HTML</span><span class="tag">CSS</span><span class="tag">JavaScript</span></div>
+          </div>
+        </div>
+      </section>
+
+      <div class="credit">
+        <p>ออกแบบได้แรงบันดาลใจจาก <a href="https://brittanychiang.com" target="_blank">Brittany Chiang</a></p>
+      </div>
+    </main>
+  </div>
+
+  <!-- MODAL -->
+  <div class="modal-bg" id="modal" onclick="handleClick(event)">
+    <div class="modal" id="mbox">
+      <button class="modal-x" onclick="closeModal()">✕</button>
+      <div class="m-icon">🧊</div>
+      <div class="m-title">ตู้เย็นอัจฉริยะ</div>
+      <div class="m-body">ระบบ Smart Refrigerator ที่พัฒนาขึ้นเพื่อแก้ปัญหาการลืมวันหมดอายุและของหมดในตู้เย็น ใช้ Sensor ตรวจจับและเชื่อมข้อมูลกับ Web Interface แบบ Real-time ผู้ใช้สามารถดูสถานะ จัดการสินค้า และรับการแจ้งเตือนผ่านหน้าเว็บได้ทันที</div>
+      <div class="tags" style="margin-bottom:1.25rem;"><span class="tag">HTML/CSS</span><span class="tag">JavaScript</span><span class="tag">PHP</span><span class="tag">IoT / Sensor</span><span class="tag">Database</span></div>
+      <ul class="m-list">
+        <li>ตรวจสอบสินค้าในตู้เย็นแบบ Real-time ผ่าน Sensor</li>
+        <li>แจ้งเตือนวันหมดอายุและของที่ใกล้จะหมด</li>
+        <li>Web Interface สำหรับจัดการและดูสถิติการใช้งาน</li>
+        <li>บันทึกประวัติการหยิบและเติมสินค้าอัตโนมัติ</li>
+        <li>พัฒนาเป็น Senior Project ในมหาวิทยาลัย</li>
+      </ul>
+    </div>
+  </div>
+
+  <script src="js/script.js"></script>
+</body>
+</html>

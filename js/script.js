@@ -1,0 +1,116 @@
+// ===== Marquee Technologies =====
+(function() {
+  const techs = [
+    { icon: '🌐', name: 'HTML5', color: '#ce9178' },
+    { icon: '🎨', name: 'CSS3', color: '#569cd6' },
+    { icon: '⚡', name: 'JavaScript', color: '#dcdcaa' },
+    { icon: '🅱️', name: 'Bootstrap', color: '#7c4dff' },
+    { icon: '🐘', name: 'PHP', color: '#9b6bcc' },
+    { icon: '⚙️', name: 'C', color: '#4ec9b0' },
+    { icon: '🔀', name: 'Git', color: '#f44747' },
+    { icon: '📮', name: 'Postman', color: '#ef6c00' },
+  ];
+
+  const track = document.getElementById('mtrack');
+  [...techs, ...techs, ...techs].forEach(t => {
+    const chip = document.createElement('div');
+    chip.className = 'm-chip';
+    chip.innerHTML = `<span>${t.icon}</span><span style="color:${t.color}">${t.name}</span>`;
+    track.appendChild(chip);
+  });
+})();
+
+// ===== Age Calculator =====
+(function() {
+  const birthDate = new Date(2003, 8, 11);
+  const today = new Date();
+  let age = today.getFullYear() - birthDate.getFullYear();
+
+  if (today.getMonth() < birthDate.getMonth() || 
+      (today.getMonth() === birthDate.getMonth() && today.getDate() < birthDate.getDate())) {
+    age--;
+  }
+
+  document.getElementById('age-text').textContent = age;
+})();
+
+// ===== Navigation Active State =====
+const sections = ['about', 'experience', 'projects'];
+const links = document.querySelectorAll('.nl');
+
+function updateNav() {
+  let currentSection = 'about';
+
+  sections.forEach(id => {
+    const element = document.getElementById(id);
+    if (element && window.scrollY >= element.offsetTop - 220) {
+      currentSection = id;
+    }
+  });
+
+  links.forEach(link => {
+    link.classList.toggle('active', link.getAttribute('href') === '#' + currentSection);
+  });
+}
+
+window.addEventListener('scroll', updateNav, { passive: true });
+updateNav();
+
+// ===== Modal Functionality =====
+function openModal() {
+  document.getElementById('modal').classList.add('show');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeModal() {
+  document.getElementById('modal').classList.remove('show');
+  document.body.style.overflow = '';
+}
+
+function handleClick(event) {
+  if (event.target === document.getElementById('modal')) {
+    closeModal();
+  }
+}
+
+document.addEventListener('keydown', (event) => {
+  if (event.key === 'Escape') {
+    closeModal();
+  }
+});
+
+// ===== Glow Effect (Mouse Tracking) =====
+(function() {
+  const canvas = document.getElementById('glow');
+  const ctx = canvas.getContext('2d');
+  let mouseX = window.innerWidth / 2;
+  let mouseY = window.innerHeight / 2;
+
+  function resizeCanvas() {
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+  }
+
+  resizeCanvas();
+  window.addEventListener('resize', resizeCanvas);
+
+  window.addEventListener('mousemove', (event) => {
+    mouseX = event.clientX;
+    mouseY = event.clientY;
+  });
+
+  function draw() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+    const gradient = ctx.createRadialGradient(mouseX, mouseY, 0, mouseX, mouseY, 600);
+    gradient.addColorStop(0, 'rgba(86, 156, 214, 0.12)');
+    gradient.addColorStop(1, 'transparent');
+
+    ctx.fillStyle = gradient;
+    ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+    requestAnimationFrame(draw);
+  }
+
+  draw();
+})();

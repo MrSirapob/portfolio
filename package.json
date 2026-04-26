@@ -1,0 +1,20 @@
+{
+  "name": "portfolio",
+  "version": "1.0.0",
+  "description": "Personal portfolio website of Sirapob Raksabun - Front-End Developer",
+  "main": "index.html",
+  "keywords": [
+    "portfolio",
+    "developer",
+    "frontend",
+    "html",
+    "css",
+    "javascript"
+  ],
+  "author": "Sirapob Raksabun",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/MrSirapob/portfolio.git"
+  }
+}
