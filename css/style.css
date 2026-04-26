@@ -502,6 +502,7 @@ body {
 }
 
 /* Mobile */
+/* Mobile */
 @media (max-width: 860px) {
   .container {
     flex-direction: column;
@@ -536,12 +537,26 @@ body {
   }
 
   .row {
-    grid-template-columns: 1fr;
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
   }
 
-  .row-date,
   .proj-thumb {
+    display: flex;
+    flex: 0 0 65px;
+    height: 50px;
+    font-size: 1.2rem;
+  }
+
+  .row-date {
     display: none;
+  }
+
+  /* ขวา */
+  .row > div:last-child {
+    flex: 1;
+    min-width: 0;
   }
 
   .tech-grid {
