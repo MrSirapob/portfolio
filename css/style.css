@@ -7,9 +7,9 @@
 :root {
   --bg: #0f172a;
   --bg2: #1e293b;
-  --accent: #64ffda;
+  --accent: #e6f1ff;
   --text: #ccd6f6;
-  --muted: #8892b0;
+  --muted: #8892b0 ;
   --white: #e6f1ff;
   --mono: "JetBrains Mono", monospace;
   --sans: "Inter", sans-serif;
@@ -91,23 +91,24 @@ body {
   align-items: center;
   gap: 1rem;
   text-decoration: none;
-  padding: 0.4rem 0;
+  padding: 0.5rem 0;
   color: var(--muted);
   font-family: var(--mono);
-  font-size: 0.72rem;
+  font-size: 0.8rem;
   letter-spacing: 0.15em;
   text-transform: uppercase;
   transition: color 0.2s;
   width: fit-content;
+  font-weight: 600;
 }
 
 .nav-line {
   display: block;
-  height: 1px;
-  width: 28px;
+  height: 1.3px;
+  width: 30px;
   background: var(--muted);
   transition:
-    width 0.3s ease,
+    width 0.1s ease,
     background 0.2s;
 }
 
@@ -118,7 +119,8 @@ body {
 
 .nav a:hover .nav-line,
 .nav a.active .nav-line {
-  width: 56px;
+  width: 60px;
+  height: 2.5px;
   background: var(--white);
 }
 
@@ -144,8 +146,8 @@ body {
 }
 
 .socials svg {
-  width: 20px;
-  height: 20px;
+  width: 26px;
+  height: 26px;
   fill: currentColor;
 }
 
@@ -163,7 +165,7 @@ body {
 
 .section-label {
   font-family: var(--mono);
-  font-size: 0.7rem;
+  font-size: 1rem;
   letter-spacing: 0.18em;
   text-transform: uppercase;
   color: var(--muted);
@@ -171,6 +173,7 @@ body {
   display: flex;
   align-items: center;
   gap: 1rem;
+  font-weight: 600;
 }
 
 .section-label::after {
@@ -283,7 +286,7 @@ body {
 .row {
   display: grid;
   grid-template-columns: 100px 1fr;
-  gap: 1.5rem;
+  gap: 2rem;
   padding: 1.25rem 1.25rem;
   border-radius: 10px;
   transition:
@@ -304,7 +307,7 @@ body {
 
 .row-date {
   font-family: var(--mono);
-  font-size: 0.7rem;
+  font-size: 0.8rem;
   color: var(--muted);
   letter-spacing: 0.06em;
   padding-top: 3px;
@@ -593,11 +596,11 @@ body {
 .tech-group span {
   font-family: var(--mono);
   font-size: 0.75rem;
-  color: var(--accent);
+  color: var(--white);
   letter-spacing: 0.12em;
   text-transform: uppercase;
   white-space: nowrap;
-  opacity: 0.85;
+  opacity: 0.9;
 }
 
 /* animation ลื่น */
