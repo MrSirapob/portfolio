@@ -1,25 +1,3 @@
-// ===== Marquee Technologies =====
-(function() {
-  const techs = [
-    { icon: '🌐', name: 'HTML5', color: '#ce9178' },
-    { icon: '🎨', name: 'CSS3', color: '#569cd6' },
-    { icon: '⚡', name: 'JavaScript', color: '#dcdcaa' },
-    { icon: '🅱️', name: 'Bootstrap', color: '#7c4dff' },
-    { icon: '🐘', name: 'PHP', color: '#9b6bcc' },
-    { icon: '⚙️', name: 'C', color: '#4ec9b0' },
-    { icon: '🔀', name: 'Git', color: '#f44747' },
-    { icon: '📮', name: 'Postman', color: '#ef6c00' },
-  ];
-
-  const track = document.getElementById('mtrack');
-  [...techs, ...techs, ...techs].forEach(t => {
-    const chip = document.createElement('div');
-    chip.className = 'm-chip';
-    chip.innerHTML = `<span>${t.icon}</span><span style="color:${t.color}">${t.name}</span>`;
-    track.appendChild(chip);
-  });
-})();
-
 // ===== Age Calculator =====
 (function() {
   const birthDate = new Date(2003, 8, 11);
@@ -103,7 +81,7 @@ document.addEventListener('keydown', (event) => {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
 
     const gradient = ctx.createRadialGradient(mouseX, mouseY, 0, mouseX, mouseY, 600);
-    gradient.addColorStop(0, 'rgba(86, 156, 214, 0.12)');
+    gradient.addColorStop(0, 'rgba(29, 78, 216, 0.15)');
     gradient.addColorStop(1, 'transparent');
 
     ctx.fillStyle = gradient;
