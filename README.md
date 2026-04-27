@@ -1,103 +1,143 @@
 # 👨‍💻 Sirapob Raksabun — Portfolio
 
-> A modern, responsive portfolio website showcasing my skills and projects as a Front-End Developer
+> Computer Engineering graduate focused on creating user-friendly UI from design to real-world implementation
 
 ## ✨ Features
 
-- 🎨 **Modern Design** - Clean and minimal UI inspired by professional portfolios
-- 📱 **Responsive** - Works seamlessly on desktop and mobile devices
-- ⚡ **Performance** - Optimized for fast loading and smooth interactions
-- 🎯 **Interactive Elements** - Smooth scrolling, modal dialogs, and hover effects
-- 🌙 **Dark Theme** - Eye-friendly dark color scheme
-- 🎬 **Glow Effect** - Interactive mouse-tracking glow animation
+- 🎨 **Modern & Minimal Design** - Clean UI with professional aesthetics
+- 📱 **Fully Responsive** - Seamlessly adapts to desktop and mobile devices (breakpoint: 860px)
+- ⚡ **Smooth Interactions** - Optimized scrolling, modal dialogs, and interactive effects
+- 🌙 **Dark Theme** - Eye-friendly dark color scheme with blue accent colors
+- 🎬 **Interactive Glow Effect** - Mouse-tracking radial gradient animation
+- ♿ **Semantic HTML** - Built with proper HTML5 structure and accessibility in mind
 
 ## 📁 Project Structure
 
 ```
 portfolio/
-├── index.html          # Main HTML file
+├── index.html          # Main portfolio page (Thai language)
 ├── css/
-│   └── style.css       # All CSS styles
+│   └── style.css       # All styles (Grid, Flexbox, CSS Variables)
 ├── js/
-│   └── script.js       # All JavaScript functionality
+│   └── script.js       # Interactive features (Glow effect, Navigation, Modal, etc.)
+├── images/
+│   └── logo.png        # Favicon
 └── README.md           # This file
 ```
 
 ## 🚀 Getting Started
 
+This portfolio is live at your domain. To run locally:
+
 1. **Clone the repository**
    ```bash
-   git clone https://github.com/yourusername/portfolio.git
+   git clone https://github.com/MrSirapob/portfolio.git
    cd portfolio
    ```
 
-2. **Open the portfolio**
-   - Simply open `index.html` in your web browser
+2. **Open locally**
+   - Open `index.html` directly in your browser
    - Or use a local server:
      ```bash
      python -m http.server 8000
      # Visit http://localhost:8000
      ```
+   - Or use Live Server extension in VS Code
 
 ## 📋 Sections
 
-- **About** - Introduction and professional background
-- **Experience** - Work experience and education
-- **Projects** - Showcase of completed projects with details
+- **About** - Introduction as a recent graduate, professional background, internship experience, and current job opportunity status
+- **Experience** - Education at Phaya University and Fullstack Developer internship at Hyphen Plus Company
+- **Projects** - Showcase of completed projects:
+  - Smart Refrigerator (IoT): AI-powered smart refrigerator using ESP32, Raspberry Pi, and YOLO
+  - G3nz Website: Personal gaming website with game statistics and recommendations
 
 ## 🛠️ Tech Stack
 
 - **Frontend**: HTML5, CSS3, JavaScript (Vanilla)
-- **Design**: Custom CSS with responsive design
-- **Icons**: SVG icons for GitHub, X (Twitter), and Email
-- **Fonts**: Inter (body) and JetBrains Mono (monospace)
+- **Backend** (from internship): PHP, MySQL
+- **Hardware/IoT**: ESP32, Raspberry Pi, YOLO
+- **Developer Tools**: Git, Postman
+- **Other**: Bootstrap, C
+- **Fonts**: Inter (body), JetBrains Mono (monospace)
+- **Design Approach**: Custom CSS with CSS Grid and Flexbox for responsive layouts
 
 ## 🎯 Features Breakdown
 
-### Marquee Animation
-- Scrolling technology showcase at the bottom of the About section
-- Displays skills: HTML5, CSS3, JavaScript, Bootstrap, PHP, C, Git, Postman
+### Mouse-Tracking Glow Effect
+- Canvas-based radial gradient animation that follows the cursor
+- Creates an interactive visual element without affecting performance
 
-### Navigation
-- Sticky left sidebar with navigation links
-- Active state indicator based on scroll position
-- Social media links
+### Marquee Technology Showcase
+- Continuous scrolling animation of skills/technologies
+- Displays: HTML5, CSS3, JavaScript, Bootstrap, PHP, C, Git, Postman
 
-### Projects Modal
-- Interactive project showcase with detailed information
-- Click to open detailed view
-- Keyboard support (Esc to close)
+### Sticky Navigation Sidebar
+- Left-side navigation with active state indicators
+- Automatically highlights current section based on scroll position
+- Includes social media links (GitHub, X/Twitter, Email)
 
-### Age Calculator
-- Automatically calculates and displays age
+### Interactive Project Modal
+- Click projects to view detailed information
+- Modal can be closed via X button, Escape key, or clicking outside
+- Displays project details, description, and technology stack
+
+### Automatic Age Calculator
+- Calculates and displays the user's age from birth date (Sept 11, 2003)
+- Updates automatically using JavaScript
 
 ### Responsive Design
-- Mobile-optimized breakpoint at 860px
+- Mobile-first approach with breakpoint at 860px
 - Adapts layout for smaller screens
+- Touch-friendly navigation and interactions
 
-## 📝 Customization
+## 📝 Customization Guide
 
 ### Update Personal Information
-Edit `index.html`:
-- Name and title in the left section
-- About text in the About section
-- Experience and projects in respective sections
+In `index.html`:
+- **Name & Title**: Update `.name` and `.role` divs in the left sidebar
+- **Tagline**: Modify the text in the `<div class="tagline">` section
+- **About Text**: Edit the paragraphs in the About section
+- **Status Pills**: Update or remove the `.pill` elements showing availability
+- **Experience**: Add/remove entries in the Experience section
+- **Projects**: Modify project details and modal content
 
-### Modify Colors
-Edit `css/style.css`:
-- CSS variables in `:root` selector control the color scheme
-- Update colors like `--accent`, `--accent2`, etc.
+### Modify Color Scheme
+In `css/style.css`:
+- All colors are defined as CSS variables in the `:root` selector
+- Key variables:
+  - `--primary`: Main text color
+  - `--accent`: Primary accent color (blue)
+  - `--accent2`: Secondary accent color (cyan)
+  - `--bg`: Background color
+  - `--bg2`: Secondary background color
+- Update these to match your brand
 
-### Change Technologies
-Edit `js/script.js`:
-- Modify the `techs` array in the Marquee section
-- Add or remove technology items
+### Update Technologies List
+In `js/script.js`:
+- Find the technology marquee section
+- Update the `.tech-group` span elements with your skills
+- The marquee duplicates content automatically for the scroll effect
 
-## 📞 Contact
+### Add/Remove Social Links
+In `index.html`:
+- Update the `.socials` section with your social media links
+- Modify SVG paths or use icons from your preferred icon library
 
-- **Email**: sirapob.1109@gmail.com
-- **GitHub**: [github.com/MrSirapob](https://github.com)
-- **X (Twitter)**: [@MrG3nz](https://x.com)
+### Change Project Details
+In `index.html`:
+- Update project thumbnails (emoji or images)
+- Modify project descriptions and tech tags
+- Update modal content for detailed project information
+
+## 📞 Contact & Social
+
+- **Email**: [sirapob.1109@gmail.com](mailto:sirapob.1109@gmail.com)
+- **GitHub**: [@MrSirapob](https://github.com/MrSirapob)
+- **X (Twitter)**: [@MrG3nz](https://x.com/MrG3nz)
+- **Location**: Phichit, Thailand
+
+Feel free to reach out for opportunities, collaborations, or just to connect!
 
 ## 📄 License
 
