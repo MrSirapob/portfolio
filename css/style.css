@@ -9,7 +9,7 @@
   --bg2: #1e293b;
   --accent: #e6f1ff;
   --text: #ccd6f6;
-  --muted: #8892b0 ;
+  --muted: #8892b0;
   --white: #e6f1ff;
   --mono: "JetBrains Mono", monospace;
   --sans: "Inter", sans-serif;
@@ -623,4 +623,21 @@ body {
   color: inherit;
   display: grid;
   grid-template-columns: 100px 1fr;
+}
+
+.link {
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+.link:hover {
+  text-decoration: underline;
+  opacity: 0.85;
+}
+
+.link,
+.link:visited,
+.link:hover,
+.link:active {
+  text-decoration: none;
 }
