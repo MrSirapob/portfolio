@@ -19,16 +19,17 @@ let currentSection = 'about';
 
 const observerOptions = {
   root: null,
-  rootMargin: '0px 0px -66% 0px',
+  rootMargin: '-120px 0px -50% 0px',
   threshold: 0
 };
 
 const observer = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      currentSection = entry.target.id;
-    }
-  });
+  // เลือกเฉพาะ entry แรกที่ isIntersecting
+  const activeEntry = entries.find(entry => entry.isIntersecting);
+  
+  if (activeEntry) {
+    currentSection = activeEntry.target.id;
+  }
 
   links.forEach(link => {
     link.classList.toggle('active', link.getAttribute('href') === '#' + currentSection);
