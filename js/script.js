@@ -10,11 +10,9 @@
   const today = new Date();
   let age = today.getFullYear() - birthDate.getFullYear();
 
-  if (
-    today.getMonth() < birthDate.getMonth() ||
-    (today.getMonth() === birthDate.getMonth() && today.getDate() < birthDate.getDate())
-  ) {
-    age -= 1;
+  if (today.getMonth() < birthDate.getMonth() || 
+      (today.getMonth() === birthDate.getMonth() && today.getDate() < birthDate.getDate())) {
+    age--;
   }
 
   ageText.textContent = age;
@@ -29,69 +27,25 @@ const sections = sectionIds
 
 let currentSection = "about";
 
-const navObserver = new IntersectionObserver(
-  (entries) => {
-    const visibleEntries = entries
-      .filter((entry) => entry.isIntersecting)
-      .sort((a, b) => b.intersectionRatio - a.intersectionRatio);
-
-    if (visibleEntries.length > 0) {
-      currentSection = visibleEntries[0].target.id;
-    }
-
-    navLinks.forEach((link) => {
-      link.classList.toggle("active", link.getAttribute("href") === `#${currentSection}`);
-    });
-  },
-  {
-    root: null,
-    rootMargin: "-22% 0px -52% 0px",
-    threshold: [0.1, 0.35, 0.6],
+const observer = new IntersectionObserver((entries) => {
+  // เลือกเฉพาะ entry แรกที่ isIntersecting
+  const activeEntry = entries.find(entry => entry.isIntersecting);
+  
+  if (activeEntry) {
+    currentSection = activeEntry.target.id;
   }
-);
 
-sections.forEach((section) => navObserver.observe(section));
-
-// ===== Reveal On Scroll =====
-const revealElements = document.querySelectorAll(".reveal");
-const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-
-if (!prefersReducedMotion) {
-  const revealObserver = new IntersectionObserver(
-    (entries, observer) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add("is-visible");
-          observer.unobserve(entry.target);
-        }
-      });
-    },
-    {
-      threshold: 0.18,
-      rootMargin: "0px 0px -8% 0px",
-    }
-  );
-
-  revealElements.forEach((element) => {
-    if (!element.classList.contains("is-visible")) {
-      revealObserver.observe(element);
-    }
+  links.forEach(link => {
+    link.classList.toggle('active', link.getAttribute('href') === '#' + currentSection);
   });
-} else {
-  revealElements.forEach((element) => element.classList.add("is-visible"));
-}
+}, observerOptions);
 
-// ===== Modal =====
-const modal = document.getElementById("modal");
-const modalBox = document.getElementById("mbox");
-const modalTriggers = document.querySelectorAll(".modal-trigger");
-const modalCloseButtons = document.querySelectorAll("[data-modal-close]");
-let lastFocusedElement = null;
+sections.forEach(id => {
+  const element = document.getElementById(id);
+  if (element) observer.observe(element);
+});
 
-function setBodyScrollLock(isLocked) {
-  document.body.style.overflow = isLocked ? "hidden" : "";
-}
-
+// ===== Modal Functionality =====
 function openModal() {
   if (!modal) {
     return;
@@ -142,11 +96,7 @@ document.addEventListener("keydown", (event) => {
   if (event.key === "Escape" && modal?.classList.contains("show")) {
     closeModal();
   }
-
-  if (event.key === "Tab" && modal?.classList.contains("show") && modalBox) {
-    const focusableElements = modalBox.querySelectorAll(
-      'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])'
-    );
+});
 
     if (focusableElements.length === 0) {
       return;
@@ -208,10 +158,9 @@ document.addEventListener("keydown", (event) => {
 
     context.clearRect(0, 0, width, height);
 
-    const gradient = context.createRadialGradient(currentX, currentY, 0, currentX, currentY, 420);
-    gradient.addColorStop(0, "rgba(56, 189, 248, 0.16)");
-    gradient.addColorStop(0.45, "rgba(37, 99, 235, 0.12)");
-    gradient.addColorStop(1, "transparent");
+    const gradient = ctx.createRadialGradient(mouseX, mouseY, 0, mouseX, mouseY, 600);
+    gradient.addColorStop(0, 'rgba(29, 78, 216, 0.15)');
+    gradient.addColorStop(1, 'transparent');
 
     context.fillStyle = gradient;
     context.fillRect(0, 0, width, height);
