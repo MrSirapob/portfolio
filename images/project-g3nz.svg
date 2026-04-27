@@ -1,0 +1,33 @@
+<svg width="440" height="312" viewBox="0 0 440 312" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="440" height="312" rx="28" fill="#0B090A"/>
+  <rect width="440" height="312" rx="28" fill="url(#bg)"/>
+  <g opacity="0.22">
+    <path d="M0 38H440" stroke="#FF4D5A"/>
+    <path d="M0 140H440" stroke="#5D2026"/>
+    <path d="M0 208H440" stroke="#301316"/>
+    <path d="M104 0V312" stroke="#1A1214"/>
+    <path d="M210 0V312" stroke="#1A1214"/>
+    <path d="M316 0V312" stroke="#1A1214"/>
+  </g>
+  <circle cx="335" cy="72" r="74" fill="url(#glow)" opacity="0.7"/>
+  <text x="18" y="28" fill="#FF5965" font-family="Inter, Arial, sans-serif" font-size="18" font-weight="700" letter-spacing="6">G3NZ</text>
+  <text x="208" y="98" fill="#FF5965" font-family="JetBrains Mono, monospace" font-size="11" letter-spacing="5">// PROFILE</text>
+  <text x="172" y="188" fill="#F3F3F3" font-family="Inter, Arial, sans-serif" font-size="110" font-weight="800" letter-spacing="2">G</text>
+  <text x="235" y="188" fill="#FF4D5A" font-family="Inter, Arial, sans-serif" font-size="110" font-weight="800" letter-spacing="2">3</text>
+  <text x="291" y="188" fill="#F3F3F3" font-family="Inter, Arial, sans-serif" font-size="110" font-weight="800" letter-spacing="2">NZ</text>
+  <text x="207" y="224" fill="#8B8B8B" font-family="JetBrains Mono, monospace" font-size="18" font-weight="600" letter-spacing="3">WEB DEV &amp; TRADER | ICT</text>
+  <rect x="204" y="255" width="64" height="24" rx="6" fill="#131012" stroke="#352428"/>
+  <rect x="276" y="255" width="55" height="24" rx="6" fill="#131012" stroke="#352428"/>
+  <text x="224" y="271" fill="#949494" font-family="Inter, Arial, sans-serif" font-size="11" font-weight="600">Follow</text>
+  <text x="294" y="271" fill="#B5B5B5" font-family="Inter, Arial, sans-serif" font-size="11" font-weight="700">Discord</text>
+  <defs>
+    <radialGradient id="glow" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(335 72) rotate(90) scale(74)">
+      <stop stop-color="#FF4250"/>
+      <stop offset="1" stop-color="#FF4250" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="bg" x1="0" y1="0" x2="440" y2="312" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#120F11"/>
+      <stop offset="1" stop-color="#0A0A0C"/>
+    </linearGradient>
+  </defs>
+</svg>

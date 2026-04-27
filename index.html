@@ -4,48 +4,58 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Portfolio ของ Sirapob Raksabun สำหรับสาย Frontend และ Full-Stack Web Development">
   <title>Sirapob R.</title>
   <link rel="icon" type="image/png" href="images/logo.png">
   <link
-    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap"
     rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
-  <canvas id="glow"></canvas>
-  <div class="container">
+  <canvas id="glow" aria-hidden="true"></canvas>
+  <div class="bg-orb orb-a" aria-hidden="true"></div>
+  <div class="bg-orb orb-b" aria-hidden="true"></div>
 
-    <!-- LEFT -->
+  <div class="container">
     <aside class="left">
-      <div>
+      <div class="left-inner reveal is-visible">
+        <p class="eyebrow">Available for frontend roles</p>
         <div class="name">Sirapob<br>Raksabun</div>
         <div class="role">Frontend Developer</div>
         <div class="tagline">
           เรียนรู้การสร้าง UI ที่ใช้งานง่าย<br>
           จากดีไซน์สู่การใช้งานจริง
         </div>
-        <ul class="nav">
+
+        <div class="mini-card">
+          <div class="mini-label">Current Focus</div>
+          <p>Responsive UI, smooth interaction และประสบการณ์ใช้งานที่ชัดเจนทั้งบน desktop และ mobile</p>
+        </div>
+
+        <ul class="nav" aria-label="Section navigation">
           <li><a href="#about" class="nl active"><span class="nav-line"></span>About</a></li>
           <li><a href="#experience" class="nl"><span class="nav-line"></span>Experience</a></li>
           <li><a href="#projects" class="nl"><span class="nav-line"></span>Projects</a></li>
         </ul>
       </div>
-      <div class="socials">
-        <a href="https://github.com/MrSirapob" target="_blank" title="GitHub">
-          <svg viewBox="0 0 24 24">
+
+      <div class="socials reveal is-visible">
+        <a href="https://github.com/MrSirapob" target="_blank" rel="noreferrer" title="GitHub" aria-label="GitHub">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
             <path
               d="M12 0C5.37 0 0 5.37 0 12c0 5.303 3.438 9.8 8.205 11.387.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222 0 1.606-.015 2.898-.015 3.293 0 .319.216.694.825.576C20.565 21.795 24 17.298 24 12c0-6.63-5.37-12-12-12z" />
           </svg>
         </a>
-        <a href="https://x.com/MrG3nz" target="_blank" title="X">
-          <svg viewBox="0 0 24 24">
+        <a href="https://x.com/MrG3nz" target="_blank" rel="noreferrer" title="X" aria-label="X">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
             <path
               d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.747l7.73-8.835L1.254 2.25H8.08l4.259 5.63L18.244 2.25zm-1.161 17.52h1.833L7.084 4.126H5.117L17.083 19.77z" />
           </svg>
         </a>
-        <a href="mailto:sirapob.1109@gmail.com" title="Email">
-          <svg viewBox="0 0 24 24">
+        <a href="mailto:sirapob.1109@gmail.com" title="Email" aria-label="Email">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
             <path
               d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z" />
           </svg>
@@ -53,45 +63,61 @@
       </div>
     </aside>
 
-    <!-- RIGHT -->
     <main class="right">
-
-      <section id="about" class="section">
+      <section id="about" class="section reveal">
         <div class="section-label">About</div>
-        <div class="about-text">
-          <p>
-            ผมเป็นนักศึกษาจบใหม่จาก
-            <a href="https://www.up.ac.th" target="_blank" class="hl link">
-              มหาวิทยาลัยพะเยา
-            </a>
-            สาขาวิชา วิศวกรรมคอมพิวเตอร์
-            มีความสนใจด้าน Front-End Developer
-            และกำลังพัฒนาทักษะเพิ่มเติมเพื่อก้าวสู่การเป็น
-            Full-Stack Developer
-          </p>
 
-          <p>
-            มีประสบการณ์ฝึกงานในตำแหน่ง Full-Stack Web Developer ที่
-            <a href="https://hyphen-plus.com/" target="_blank" class="hl link">
-              บริษัท ไฮเฟน พลัส จำกัด
-            </a>
-            เป็นระยะเวลา 4 เดือน
-            ได้ทำงานร่วมกับทีมพัฒนาในสภาพแวดล้อมจริง
-            และมีส่วนร่วมในการพัฒนาระบบแบบ
-            ตั้งแต่การออกแบบ UI ไปจนถึง Backend
-          </p>
+        <div class="about-shell">
+          <div class="about-text">
+            <p>
+              ผมเป็นนักศึกษาจบใหม่จาก
+              <a href="https://www.up.ac.th" target="_blank" rel="noreferrer" class="hl link">มหาวิทยาลัยพะเยา</a>
+              สาขาวิชาวิศวกรรมคอมพิวเตอร์ มีความสนใจด้าน Frontend Development
+              และกำลังพัฒนาทักษะเพิ่มเติมเพื่อก้าวต่อไปในสาย Full-Stack Development
+            </p>
 
-          <p>
-            ปัจจุบันกำลังเปิดรับโอกาสในการทำงาน และมุ่งเน้นพัฒนาทักษะอย่างต่อเนื่อง
-            สนใจการสร้าง Web Application ที่ใช้งานง่าย มีโครงสร้างที่ดี และเขียนโค้ดอย่างเป็นระบบ
-          </p>
-          <div class="info-pills">
-            <span class="pill pill-green"><span class="pdot"></span>พร้อม Interview</span>
-            <span class="pill pill-cyan">อายุ <span id="age-text">—</span> ปี</span>
-            <span class="pill pill-cyan">Phichit, TH</span>
+            <p>
+              มีประสบการณ์ฝึกงานในตำแหน่ง Full-Stack Web Developer ที่
+              <a href="https://hyphen-plus.com/" target="_blank" rel="noreferrer" class="hl link">บริษัท ไฮเฟ่น พลัส
+                จำกัด</a>
+              เป็นระยะเวลา 4 เดือน ได้ทำงานร่วมกับทีมพัฒนาในสภาพแวดล้อมจริง
+              ตั้งแต่การออกแบบ UI ไปจนถึงการเชื่อมต่อระบบฝั่ง Backend
+            </p>
+
+            <p>
+              ปัจจุบันกำลังเปิดรับโอกาสในการทำงาน และยังคงโฟกัสกับการสร้าง Web Application
+              ที่ใช้งานง่าย มีโครงสร้างที่ดี และเขียนโค้ดอย่างเป็นระบบ
+            </p>
+
+            <div class="info-pills">
+              <span class="pill pill-green"><span class="pdot"></span>พร้อม Interview</span>
+              <span class="pill pill-cyan">อายุ <span id="age-text">-</span> ปี</span>
+              <span class="pill pill-cyan">Phichit, TH</span>
+            </div>
+          </div>
+
+          <div class="focus-grid">
+            <article class="focus-card">
+              <div class="focus-kicker">UI</div>
+              <h3>Interface ที่อ่านง่าย</h3>
+              <p>จัดลำดับข้อมูลให้ผู้ใช้เข้าใจสิ่งสำคัญได้เร็ว และใช้งานต่อได้แบบไม่สะดุด</p>
+            </article>
+
+            <article class="focus-card">
+              <div class="focus-kicker">Build</div>
+              <h3>Responsive ที่เก็บรายละเอียด</h3>
+              <p>ให้ layout, spacing และ interaction อยู่ทรงทั้งบน mobile, tablet และ desktop</p>
+            </article>
+
+            <article class="focus-card">
+              <div class="focus-kicker">Workflow</div>
+              <h3>โค้ดที่ต่อยอดง่าย</h3>
+              <p>ให้ component และ structure อ่านต่อได้ง่ายเวลาต้องพัฒนาเพิ่มหรือส่งต่อทีม</p>
+            </article>
           </div>
         </div>
-        <div class="tech-marquee">
+
+        <div class="tech-marquee" aria-label="Tech stack">
           <div class="tech-track">
             <div class="tech-group">
               <span>HTML5</span>
@@ -104,7 +130,7 @@
               <span>Postman</span>
             </div>
 
-            <div class="tech-group">
+            <div class="tech-group" aria-hidden="true">
               <span>HTML5</span>
               <span>CSS3</span>
               <span>JavaScript</span>
@@ -118,40 +144,58 @@
         </div>
       </section>
 
-      <section id="experience" class="section">
+      <section id="experience" class="section reveal">
         <div class="section-label">Experience</div>
-        <div class="row">
-          <div class="row-date">2021 — 2024</div>
-          <div>
-            <div class="row-company">มหาวิทยาลัยพะเยา</div>
-            <div class="row-pos">Computer Engineering — ปริญญาตรี</div>
-          </div>
-        </div>
-        <div class="row">
-          <div class="row-date">Oct 2024 — Feb 2025</div>
-          <div>
-            <div class="row-company">บริษัท ไฮเฟน พลัส จำกัด</div>
-            <div class="row-pos">Fullstack Developer Intern</div>
-            <div class="row-desc">ฝึกงานในตำแหน่ง Fullstack Developer พัฒนาทั้ง Frontend Interface และ Backend API
-              ทำงานร่วมกับทีม Developer จริง เรียนรู้ workflow การพัฒนาซอฟต์แวร์ในสภาพแวดล้อม Professional</div>
-            <div class="tags"><span class="tag">HTML/CSS</span><span class="tag">JavaScript</span><span
-                class="tag">PHP</span><span class="tag">MySQL</span></div>
-          </div>
+
+        <div class="timeline timeline-experience">
+          <article class="exp-row">
+            <div class="exp-date">2021 - 2024</div>
+            <div class="exp-body">
+              <h3 class="exp-company">มหาวิทยาลัยพะเยา</h3>
+              <div class="row-pos">Computer Engineering - ปริญญาตรี</div>
+            </div>
+          </article>
+
+          <article class="exp-row">
+            <div class="exp-date">Oct 2024 - Feb 2025</div>
+            <div class="exp-body">
+              <h3 class="exp-company">บริษัท ไฮเฟ่น พลัส จำกัด</h3>
+              <div class="row-pos">Full-Stack Developer Intern</div>
+              <div class="row-desc">
+                ฝึกงานในตำแหน่ง Full-Stack Developer พัฒนาทั้ง Frontend Interface และ Backend API
+                ได้ทำงานร่วมกับทีมพัฒนา เรียนรู้ workflow การทำงานจริง และฝึกคิดงานให้ครบตั้งแต่ UX ไปจนถึงระบบหลังบ้าน
+              </div>
+              <div class="tags">
+                <span class="tag">HTML/CSS</span>
+                <span class="tag">JavaScript</span>
+                <span class="tag">PHP</span>
+                <span class="tag">MySQL</span>
+              </div>
+            </div>
+          </article>
         </div>
       </section>
 
-      <section id="projects" class="section">
+      <section id="projects" class="section reveal">
         <div class="section-label">Projects</div>
-        <div class="row clickable" onclick="openModal()">
-          <div class="proj-thumb">🧊</div>
-          <div>
+
+        <button type="button" class="row clickable project-card modal-trigger" data-modal-target="modal">
+          <div class="proj-thumb">
+            <img src="images/project-smart-fridge.svg" alt="Smart Refrigerator project preview" class="proj-image">
+            <div class="thumb-overlay">
+              <span class="thumb-chip">IOT</span>
+              <span class="thumb-title">Smart Fridge</span>
+            </div>
+          </div>
+          <div class="project-copy">
             <div class="row-company">
-              Smart Refrigerator Based on Internet of Things (IoT)<span class="arrow">↗</span>
+              Smart Refrigerator Based on Internet of Things (IoT)
+              <span class="arrow">↗</span>
             </div>
 
             <div class="row-desc">
               ระบบตู้เย็นอัจฉริยะที่ใช้ IoT และ AI ในการตรวจสอบวัตถุดิบภายในตู้เย็น
-              สามารถวิเคราะห์ภาพ ตรวจจับวัตถุ และแจ้งเตือนแบบผ่าน LINE application
+              สามารถวิเคราะห์ภาพ ตรวจจับวัตถุ และแจ้งเตือนผ่าน LINE application
             </div>
 
             <div class="tags">
@@ -159,20 +203,27 @@
               <span class="tag">ESP32</span>
               <span class="tag">Raspberry Pi</span>
               <span class="tag">YOLO</span>
-              <span class="tag">Line app</span>
+              <span class="tag">LINE App</span>
             </div>
           </div>
-        </div>
-        <a href="https://game.sirapob.my.id" target="_blank" class="row clickable">
-          <div class="proj-thumb">💻</div>
-          <div>
+        </button>
+
+        <a href="https://game.sirapob.my.id" target="_blank" rel="noreferrer" class="row clickable project-card">
+          <div class="proj-thumb">
+            <img src="images/project-g3nz.svg" alt="G3nz website home page preview" class="proj-image">
+            <div class="thumb-overlay">
+              <span class="thumb-chip">WEB</span>
+              <span class="thumb-title">G3nz</span>
+            </div>
+          </div>
+          <div class="project-copy">
             <div class="row-company">
               G3nz Website <span class="arrow">↗</span>
             </div>
 
             <div class="row-desc">
-              เว็บไซต์ส่วนตัวที่ใช้รวบรวมเกมที่กำลังเล่น และเกมที่อยากแนะนำ
-              พร้อมแสดงสถิติการเล่น เช่น Valorant โดยออกแบบและพัฒนา UI เอง
+              เว็บไซต์ส่วนตัวที่ใช้รวบรวมเกมที่กำลังเล่นและเกมที่อยากแนะนำ
+              พร้อมแสดงสถิติการเล่น เช่น Valorant โดยออกแบบและพัฒนา UI ด้วยตัวเอง
             </div>
 
             <div class="tags">
@@ -183,40 +234,41 @@
           </div>
         </a>
       </section>
-
     </main>
   </div>
 
-  <!-- MODAL -->
-  <div class="modal-bg" id="modal" onclick="handleClick(event)">
-    <div class="modal" id="mbox">
-      <button class="modal-x" onclick="closeModal()">✕</button>
+  <div class="modal-bg" id="modal" aria-hidden="true">
+    <div class="modal" id="mbox" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+      <button class="modal-x" type="button" data-modal-close aria-label="Close project details">✕</button>
 
-      <div class="m-icon">🧊</div>
-
-      <div class="m-title">Smart Refrigerator (IoT)</div>
-
-      <div class="m-body">
-        โปรเจคตู้เย็นอัจฉริยะที่พัฒนาโดยใช้ Internet of Things (IoT)
-        เชื่อมต่อระหว่างอุปกรณ์ฮาร์ดแวร์ ระบบประมวลผล และ LINE application
-        เพื่อช่วยตรวจสอบวัตถุดิบภายในตู้เย็นแบบอัตโนมัติ
+      <div class="m-top">
+        <div class="m-icon">🧊</div>
+        <div>
+          <div class="modal-kicker">Featured Project</div>
+          <div class="m-title" id="modal-title">Smart Refrigerator (IoT)</div>
+        </div>
       </div>
 
-      <div class="tags" style="margin-bottom:1.25rem;">
+      <div class="m-body">
+        โปรเจกต์ตู้เย็นอัจฉริยะที่พัฒนาด้วยแนวคิด Internet of Things (IoT)
+        เชื่อมต่อฮาร์ดแวร์ ระบบประมวลผล และ LINE application
+        เพื่อช่วยตรวจสอบวัตถุดิบภายในตู้เย็นและแจ้งเตือนแบบอัตโนมัติ
+      </div>
+
+      <div class="tags modal-tags">
         <span class="tag">IoT</span>
         <span class="tag">ESP32</span>
         <span class="tag">Raspberry Pi</span>
         <span class="tag">YOLO</span>
-        <span class="tag">Line app</span>
+        <span class="tag">LINE App</span>
       </div>
 
       <ul class="m-list">
-        <li>พัฒนาระบบด้วย ESP32 และเซ็นเซอร์เพื่อตรวจสอบปริมาณไข่</li>
-        <li>ใช้ Raspberry Pi 4 สำหรับประมวลผลภาพภายในระบบ</li>
+        <li>พัฒนาระบบด้วย ESP32 และเซ็นเซอร์เพื่อตรวจสอบปริมาณวัตถุดิบ</li>
+        <li>ใช้ Raspberry Pi 4 สำหรับประมวลผลภาพและจัดการข้อมูลภายในระบบ</li>
         <li>ประยุกต์ใช้ AI (YOLOv5s) ในการตรวจจับวัตถุและวิเคราะห์ข้อมูลจากภาพ</li>
-        <li>เชื่อมต่อ Cloud และส่งการแจ้งเตือนผ่าน LINE</li>
+        <li>เชื่อมต่อ Cloud และส่งการแจ้งเตือนผ่าน LINE เพื่อใช้งานได้จริง</li>
       </ul>
-
     </div>
   </div>
 
