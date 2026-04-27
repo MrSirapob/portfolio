@@ -75,29 +75,11 @@ portfolio/
 - Mobile-optimized breakpoint at 860px
 - Adapts layout for smaller screens
 
-## 📝 Customization
-
-### Update Personal Information
-Edit `index.html`:
-- Name and title in the left section
-- About text in the About section
-- Experience and projects in respective sections
-
-### Modify Colors
-Edit `css/style.css`:
-- CSS variables in `:root` selector control the color scheme
-- Update colors like `--accent`, `--accent2`, etc.
-
-### Change Technologies
-Edit `js/script.js`:
-- Modify the `techs` array in the Marquee section
-- Add or remove technology items
-
 ## 📞 Contact
 
 - **Email**: sirapob.1109@gmail.com
-- **GitHub**: [github.com/MrSirapob](https://github.com)
-- **X (Twitter)**: [@MrG3nz](https://x.com)
+- **GitHub**: [github.com/MrSirapob](https://github.com/MrSirapob)
+- **X (Twitter)**: [@MrG3nz](https://x.com/MrG3nz)
 
 ## 📄 License
 
