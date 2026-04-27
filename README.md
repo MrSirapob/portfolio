@@ -89,55 +89,30 @@ This portfolio is live at your domain. To run locally:
 ### Responsive Design
 - Mobile-first approach with breakpoint at 860px
 - Adapts layout for smaller screens
-- Touch-friendly navigation and interactions
 
-## 📝 Customization Guide
+## 📝 Customization
 
 ### Update Personal Information
-In `index.html`:
-- **Name & Title**: Update `.name` and `.role` divs in the left sidebar
-- **Tagline**: Modify the text in the `<div class="tagline">` section
-- **About Text**: Edit the paragraphs in the About section
-- **Status Pills**: Update or remove the `.pill` elements showing availability
-- **Experience**: Add/remove entries in the Experience section
-- **Projects**: Modify project details and modal content
+Edit `index.html`:
+- Name and title in the left section
+- About text in the About section
+- Experience and projects in respective sections
 
-### Modify Color Scheme
-In `css/style.css`:
-- All colors are defined as CSS variables in the `:root` selector
-- Key variables:
-  - `--primary`: Main text color
-  - `--accent`: Primary accent color (blue)
-  - `--accent2`: Secondary accent color (cyan)
-  - `--bg`: Background color
-  - `--bg2`: Secondary background color
-- Update these to match your brand
+### Modify Colors
+Edit `css/style.css`:
+- CSS variables in `:root` selector control the color scheme
+- Update colors like `--accent`, `--accent2`, etc.
 
-### Update Technologies List
-In `js/script.js`:
-- Find the technology marquee section
-- Update the `.tech-group` span elements with your skills
-- The marquee duplicates content automatically for the scroll effect
+### Change Technologies
+Edit `js/script.js`:
+- Modify the `techs` array in the Marquee section
+- Add or remove technology items
 
-### Add/Remove Social Links
-In `index.html`:
-- Update the `.socials` section with your social media links
-- Modify SVG paths or use icons from your preferred icon library
+## 📞 Contact
 
-### Change Project Details
-In `index.html`:
-- Update project thumbnails (emoji or images)
-- Modify project descriptions and tech tags
-- Update modal content for detailed project information
-
-## 📞 Contact & Social
-
-- **Email**: [sirapob.1109@gmail.com](mailto:sirapob.1109@gmail.com)
-- **GitHub**: [@MrSirapob](https://github.com/MrSirapob)
-- **X (Twitter)**: [@MrG3nz](https://x.com/MrG3nz)
-- **Location**: Phichit, Thailand
-
-Feel free to reach out for opportunities, collaborations, or just to connect!
+- **Email**: sirapob.1109@gmail.com
+- **GitHub**: [github.com/MrSirapob](https://github.com)
+- **X (Twitter)**: [@MrG3nz](https://x.com)
 
 ## 📄 License
 
