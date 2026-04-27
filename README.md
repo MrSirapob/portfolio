@@ -34,7 +34,9 @@ portfolio/
 
 ## 🚀 Getting Started
 
-This portfolio is live at your domain. To run locally:
+This portfolio is already deployed.
+
+### Run locally:
 
 1. **Clone the repository**
    ```bash
