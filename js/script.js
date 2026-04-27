@@ -28,33 +28,37 @@ const sections = sectionIds
   .map((id) => document.getElementById(id))
   .filter(Boolean);
 
-let currentSection = "about";
+function updateActiveNav() {
+  if (sections.length === 0) {
+    return;
+  }
 
-const navObserver = new IntersectionObserver(
-  (entries) => {
-    const visibleEntries = entries
-      .filter((entry) => entry.isIntersecting)
-      .sort((a, b) => b.intersectionRatio - a.intersectionRatio);
+  const scrollPosition = window.scrollY + window.innerHeight * 0.35;
+  const pageBottom = window.scrollY + window.innerHeight;
 
-    if (visibleEntries.length > 0) {
-      currentSection = visibleEntries[0].target.id;
+  let currentSection = sections[0].id;
+
+  sections.forEach((section) => {
+    if (scrollPosition >= section.offsetTop) {
+      currentSection = section.id;
     }
+  });
 
-    navLinks.forEach((link) => {
-      link.classList.toggle(
-        "active",
-        link.getAttribute("href") === `#${currentSection}`,
-      );
-    });
-  },
-  {
-    root: null,
-    rootMargin: "-22% 0px -52% 0px",
-    threshold: [0.1, 0.35, 0.6],
-  },
-);
+  if (pageBottom >= document.documentElement.scrollHeight - 8) {
+    currentSection = sections[sections.length - 1].id;
+  }
 
-sections.forEach((section) => navObserver.observe(section));
+  navLinks.forEach((link) => {
+    link.classList.toggle(
+      "active",
+      link.getAttribute("href") === `#${currentSection}`,
+    );
+  });
+}
+
+updateActiveNav();
+window.addEventListener("scroll", updateActiveNav, { passive: true });
+window.addEventListener("resize", updateActiveNav);
 
 // ===== Reveal On Scroll =====
 const revealElements = document.querySelectorAll(".reveal");
