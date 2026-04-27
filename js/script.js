@@ -15,24 +15,30 @@
 // ===== Navigation Active State =====
 const sections = ['about', 'experience', 'projects'];
 const links = document.querySelectorAll('.nl');
+let currentSection = 'about';
 
-function updateNav() {
-  let currentSection = 'about';
+const observerOptions = {
+  root: null,
+  rootMargin: '0px 0px -66% 0px',
+  threshold: 0
+};
 
-  sections.forEach(id => {
-    const element = document.getElementById(id);
-    if (element && window.scrollY >= element.offsetTop - 220) {
-      currentSection = id;
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      currentSection = entry.target.id;
     }
   });
 
   links.forEach(link => {
     link.classList.toggle('active', link.getAttribute('href') === '#' + currentSection);
   });
-}
+}, observerOptions);
 
-window.addEventListener('scroll', updateNav, { passive: true });
-updateNav();
+sections.forEach(id => {
+  const element = document.getElementById(id);
+  if (element) observer.observe(element);
+});
 
 // ===== Modal Functionality =====
 function openModal() {
