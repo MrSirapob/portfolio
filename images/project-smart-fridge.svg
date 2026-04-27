@@ -1,0 +1,35 @@
+<svg width="440" height="312" viewBox="0 0 440 312" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="440" height="312" rx="28" fill="#09111F"/>
+  <rect x="26" y="26" width="388" height="260" rx="22" fill="url(#panel)" stroke="#28456E"/>
+  <circle cx="94" cy="94" r="52" fill="url(#halo)" opacity="0.9"/>
+  <rect x="64" y="70" width="114" height="160" rx="20" fill="#D8E8FF"/>
+  <rect x="76" y="82" width="90" height="68" rx="12" fill="#0F2848"/>
+  <rect x="76" y="158" width="90" height="60" rx="12" fill="#BBD6FF"/>
+  <rect x="150" y="100" width="4" height="32" rx="2" fill="#89AEE3"/>
+  <rect x="150" y="178" width="4" height="24" rx="2" fill="#89AEE3"/>
+  <rect x="220" y="76" width="134" height="68" rx="16" fill="#0F1E34" stroke="#2A4E7E"/>
+  <text x="239" y="102" fill="#7CD5FF" font-family="JetBrains Mono, monospace" font-size="14" letter-spacing="3">SMART FRIDGE</text>
+  <text x="239" y="126" fill="#F3F7FF" font-family="Inter, Arial, sans-serif" font-size="18" font-weight="700">AI + IoT Monitoring</text>
+  <rect x="220" y="166" width="58" height="30" rx="15" fill="#102944" stroke="#2F5F94"/>
+  <rect x="286" y="166" width="68" height="30" rx="15" fill="#102944" stroke="#2F5F94"/>
+  <rect x="220" y="206" width="134" height="18" rx="9" fill="#102944"/>
+  <rect x="220" y="206" width="94" height="18" rx="9" fill="url(#bar)"/>
+  <circle cx="356" cy="98" r="28" fill="#0F1E34" stroke="#2A4E7E"/>
+  <path d="M343 99L352 108L369 89" stroke="#69F0D0" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="233" y="184" fill="#D4E8FF" font-family="Inter, Arial, sans-serif" font-size="14" font-weight="700">ESP32</text>
+  <text x="301" y="184" fill="#D4E8FF" font-family="Inter, Arial, sans-serif" font-size="14" font-weight="700">YOLO</text>
+  <defs>
+    <radialGradient id="halo" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(94 94) rotate(90) scale(52)">
+      <stop stop-color="#6FD6FF"/>
+      <stop offset="1" stop-color="#6FD6FF" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="panel" x1="26" y1="26" x2="414" y2="286" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#0F223D"/>
+      <stop offset="1" stop-color="#08111F"/>
+    </linearGradient>
+    <linearGradient id="bar" x1="220" y1="215" x2="314" y2="215" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#4BA8FF"/>
+      <stop offset="1" stop-color="#69F0D0"/>
+    </linearGradient>
+  </defs>
+</svg>
