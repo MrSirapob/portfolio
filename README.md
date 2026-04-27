@@ -2,6 +2,13 @@
 
 > Computer Engineering graduate focused on creating user-friendly UI from design to real-world implementation
 
+## 🌐 Live Sites
+
+- 🚀 Portfolio: https://sirapob.my.id  
+- 🎮 Game Site: https://game.sirapob.my.id  
+
+---
+
 ## ✨ Features
 
 - 🎨 **Modern & Minimal Design** - Clean UI with professional aesthetics
