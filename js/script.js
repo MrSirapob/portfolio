@@ -1,5 +1,3 @@
-const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-
 // ===== Age Calculator =====
 (function calculateAge() {
   const ageText = document.getElementById("age-text");
@@ -14,167 +12,147 @@ const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)
 
   if (
     today.getMonth() < birthDate.getMonth() ||
-    (today.getMonth() === birthDate.getMonth() && today.getDate() < birthDate.getDate())
+    (today.getMonth() === birthDate.getMonth() &&
+      today.getDate() < birthDate.getDate())
   ) {
     age -= 1;
   }
 
-  ageText.textContent = String(age);
+  ageText.textContent = age;
 })();
 
 // ===== Active Navigation =====
-(function initActiveNavigation() {
-  const navLinks = [...document.querySelectorAll(".nl")];
-  const sections = ["about", "experience", "projects"]
-    .map((id) => document.getElementById(id))
-    .filter(Boolean);
+const sectionIds = ["about", "experience", "projects"];
+const navLinks = [...document.querySelectorAll(".nl")];
+const sections = sectionIds
+  .map((id) => document.getElementById(id))
+  .filter(Boolean);
 
-  if (navLinks.length === 0 || sections.length === 0) {
-    return;
-  }
+let currentSection = "about";
 
-  function setActiveLink(sectionId) {
-    navLinks.forEach((link) => {
-      const isActive = link.getAttribute("href") === `#${sectionId}`;
-      link.classList.toggle("active", isActive);
-    });
-  }
+const navObserver = new IntersectionObserver(
+  (entries) => {
+    const visibleEntries = entries
+      .filter((entry) => entry.isIntersecting)
+      .sort((a, b) => b.intersectionRatio - a.intersectionRatio);
 
-  setActiveLink(sections[0].id);
-
-  const observer = new IntersectionObserver(
-    (entries) => {
-      const visibleEntries = entries
-        .filter((entry) => entry.isIntersecting)
-        .sort((a, b) => b.intersectionRatio - a.intersectionRatio);
-
-      if (visibleEntries.length > 0) {
-        setActiveLink(visibleEntries[0].target.id);
-      }
-    },
-    {
-      root: null,
-      rootMargin: "-20% 0px -45% 0px",
-      threshold: [0.2, 0.4, 0.6],
+    if (visibleEntries.length > 0) {
+      currentSection = visibleEntries[0].target.id;
     }
-  );
 
-  sections.forEach((section) => observer.observe(section));
-})();
+    navLinks.forEach((link) => {
+      link.classList.toggle(
+        "active",
+        link.getAttribute("href") === `#${currentSection}`,
+      );
+    });
+  },
+  {
+    root: null,
+    rootMargin: "-22% 0px -52% 0px",
+    threshold: [0.1, 0.35, 0.6],
+  },
+);
+
+sections.forEach((section) => navObserver.observe(section));
 
 // ===== Reveal On Scroll =====
-(function initReveal() {
-  const revealItems = [...document.querySelectorAll(".reveal")];
+const revealElements = document.querySelectorAll(".reveal");
+const prefersReducedMotion = window.matchMedia(
+  "(prefers-reduced-motion: reduce)",
+).matches;
 
-  if (revealItems.length === 0) {
-    return;
-  }
-
-  if (prefersReducedMotion) {
-    revealItems.forEach((item) => item.classList.add("is-visible"));
-    return;
-  }
-
+if (!prefersReducedMotion) {
   const revealObserver = new IntersectionObserver(
     (entries, observer) => {
       entries.forEach((entry) => {
-        if (!entry.isIntersecting) {
-          return;
+        if (entry.isIntersecting) {
+          entry.target.classList.add("is-visible");
+          observer.unobserve(entry.target);
         }
-
-        entry.target.classList.add("is-visible");
-        observer.unobserve(entry.target);
       });
     },
     {
       threshold: 0.18,
       rootMargin: "0px 0px -8% 0px",
-    }
+    },
   );
 
-  revealItems.forEach((item) => revealObserver.observe(item));
-})();
-
-// ===== Modal Functionality =====
-(function initModal() {
-  const modal = document.getElementById("modal");
-  const modalTriggers = [...document.querySelectorAll("[data-modal-target='modal']")];
-  const modalCloseButtons = modal ? [...modal.querySelectorAll("[data-modal-close]")] : [];
-  let lastFocusedElement = null;
-
-  function setBodyScrollLock(isLocked) {
-    document.body.style.overflow = isLocked ? "hidden" : "";
-  }
-
-  function getFocusableElements() {
-    if (!modal) {
-      return [];
+  revealElements.forEach((element) => {
+    if (!element.classList.contains("is-visible")) {
+      revealObserver.observe(element);
     }
-
-    return [...modal.querySelectorAll(
-      "button, [href], input, select, textarea, [tabindex]:not([tabindex='-1'])"
-    )].filter((element) => !element.hasAttribute("disabled"));
-  }
-
-  function openModal() {
-    if (!modal) {
-      return;
-    }
-
-    lastFocusedElement = document.activeElement;
-    modal.classList.add("show");
-    modal.setAttribute("aria-hidden", "false");
-    setBodyScrollLock(true);
-
-    const firstFocusableElement = getFocusableElements()[0];
-    firstFocusableElement?.focus();
-  }
-
-  function closeModal() {
-    if (!modal) {
-      return;
-    }
-
-    modal.classList.remove("show");
-    modal.setAttribute("aria-hidden", "true");
-    setBodyScrollLock(false);
-
-    if (lastFocusedElement instanceof HTMLElement) {
-      lastFocusedElement.focus();
-    }
-  }
-
-  modalTriggers.forEach((trigger) => {
-    trigger.addEventListener("click", openModal);
   });
+} else {
+  revealElements.forEach((element) => element.classList.add("is-visible"));
+}
 
-  modalCloseButtons.forEach((button) => {
-    button.addEventListener("click", closeModal);
-  });
+// ===== Modal =====
+const modal = document.getElementById("modal");
+const modalBox = document.getElementById("mbox");
+const modalTriggers = document.querySelectorAll(".modal-trigger");
+const modalCloseButtons = document.querySelectorAll("[data-modal-close]");
+let lastFocusedElement = null;
 
-  if (modal) {
-    modal.addEventListener("click", (event) => {
-      if (event.target === modal) {
-        closeModal();
-      }
-    });
+function setBodyScrollLock(isLocked) {
+  document.body.style.overflow = isLocked ? "hidden" : "";
+}
+
+function openModal() {
+  if (!modal) {
+    return;
   }
 
-  document.addEventListener("keydown", (event) => {
-    if (!modal?.classList.contains("show")) {
-      return;
-    }
+  lastFocusedElement = document.activeElement;
+  modal.classList.add("show");
+  modal.setAttribute("aria-hidden", "false");
+  setBodyScrollLock(true);
 
-    if (event.key === "Escape") {
+  const focusTarget = modal.querySelector("[data-modal-close]");
+  if (focusTarget) {
+    focusTarget.focus();
+  }
+}
+
+function closeModal() {
+  if (!modal) {
+    return;
+  }
+
+  modal.classList.remove("show");
+  modal.setAttribute("aria-hidden", "true");
+  setBodyScrollLock(false);
+
+  if (lastFocusedElement instanceof HTMLElement) {
+    lastFocusedElement.focus();
+  }
+}
+
+modalTriggers.forEach((trigger) => {
+  trigger.addEventListener("click", openModal);
+});
+
+modalCloseButtons.forEach((button) => {
+  button.addEventListener("click", closeModal);
+});
+
+if (modal) {
+  modal.addEventListener("click", (event) => {
+    if (event.target === modal) {
       closeModal();
-      return;
     }
+  });
+}
 
-    if (event.key !== "Tab") {
-      return;
-    }
+document.addEventListener("keydown", (event) => {
+  if (event.key === "Escape" && modal?.classList.contains("show")) {
+    closeModal();
+  }
 
-    const focusableElements = getFocusableElements();
+  if (event.key === "Tab" && modal?.classList.contains("show") && modalBox) {
+    const focusableElements = modalBox.querySelectorAll(
+      'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])',
+    );
 
     if (focusableElements.length === 0) {
       return;
@@ -190,8 +168,8 @@ const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)
       event.preventDefault();
       firstElement.focus();
     }
-  });
-})();
+  }
+});
 
 // ===== Glow Effect =====
 (function initGlowEffect() {
@@ -212,7 +190,6 @@ const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)
   let targetY = height * 0.24;
   let currentX = targetX;
   let currentY = targetY;
-  const easing = 0.08;
 
   function resizeCanvas() {
     width = window.innerWidth;
@@ -232,13 +209,21 @@ const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)
   resizeCanvas();
 
   function draw() {
-    currentX += (targetX - currentX) * easing;
-    currentY += (targetY - currentY) * easing;
+    currentX = targetX;
+    currentY = targetY;
 
     context.clearRect(0, 0, width, height);
 
-    const gradient = context.createRadialGradient(currentX, currentY, 0, currentX, currentY, 600);
-    gradient.addColorStop(0, "rgba(29, 78, 216, 0.15)");
+    const gradient = context.createRadialGradient(
+      currentX,
+      currentY,
+      0,
+      currentX,
+      currentY,
+      420,
+    );
+    gradient.addColorStop(0, "rgba(56, 189, 248, 0.16)");
+    gradient.addColorStop(0.45, "rgba(37, 99, 235, 0.12)");
     gradient.addColorStop(1, "transparent");
 
     context.fillStyle = gradient;
